@@ -230,6 +230,44 @@ export function checkEffects(node, errors) {
   }
 }
 
+// function runPlugin() {
+//   let selectedElements = figma.currentPage.selection;
+
+//   console.log(selectedElements);
+
+//   if (selectedElements.length === 0) {
+//     figma.closePlugin('No elements selected');
+//   }
+
+//   if (selectedElements.length > 1) {
+//     figma.closePlugin('Select only one element');
+//   }
+
+//   let selectedName = selectedElements[0].name;
+
+//   function sameName(node) {
+//     return node.name === selectedName;
+//   }
+
+//   let hasSameName = figma.currentPage.findAll(sameName);
+
+//   figma.currentPage.selection = hasSameName;
+
+//   //see children
+//   console.log(selectedElements[0].children[0].name);
+
+//   // let childName = selectedElements[0].children[0].name;
+//   let childText = selectedElements[0].children[0].characters;
+
+//   if (childText.indexOf('\n')) {
+//     alert('Multiline text found in button');
+//   }
+//   figma.closePlugin();
+// }
+
+// runPlugin();
+
+
 export function checkFills(node, errors) {
   if (node.fills.length && node.visible === true) {
     if (
