@@ -5,7 +5,7 @@ export function createErrorObject(node, type, message) {
   let error = {
     message: "",
     type: "",
-    node: "",
+    node: ""
   };
 
   error.message = message;
@@ -66,7 +66,7 @@ export function checkRadius(node, errors, radiusValues) {
         createErrorObject(
           node,
           "radius",
-          "Incorrect Top Left Radius",
+          "Incorrect Top Left Radius"
           // node.topRightRadius
         )
       );
@@ -75,7 +75,7 @@ export function checkRadius(node, errors, radiusValues) {
         createErrorObject(
           node,
           "radius",
-          "Incorrect top right radius",
+          "Incorrect top right radius"
           // node.topRightRadius
         )
       );
@@ -84,7 +84,7 @@ export function checkRadius(node, errors, radiusValues) {
         createErrorObject(
           node,
           "radius",
-          "Incorrect bottom left radius",
+          "Incorrect bottom left radius"
           // node.bottomLeftRadius
         )
       );
@@ -93,7 +93,7 @@ export function checkRadius(node, errors, radiusValues) {
         createErrorObject(
           node,
           "radius",
-          "Incorrect bottom right radius",
+          "Incorrect bottom right radius"
           // node.bottomRightRadius
         )
       );
@@ -106,7 +106,7 @@ export function checkRadius(node, errors, radiusValues) {
         createErrorObject(
           node,
           "radius",
-          "Incorrect border radius",
+          "Incorrect border radius"
           // node.cornerRadius
         )
       );
@@ -137,7 +137,7 @@ export function customCheckTextFills(node, errors) {
       createErrorObject(
         node, // Node object we use to reference the error (id, layer name, etc)
         "fill", // Type of error (fill, text, effect, etc)
-        "Mixing two styles together", // Message we show to the user
+        "Mixing two styles together" // Message we show to the user
         // "Multiple Styles" Normally we return a hex value here
       )
     );
@@ -156,7 +156,7 @@ export function customCheckTextFills(node, errors) {
         createErrorObject(
           node, // Node object we use to reference the error (id, layer name, etc)
           "fill", // Type of error (fill, text, effect, etc)
-          "Incorrect text color use", // Message we show to the user
+          "Incorrect text color use" // Message we show to the user
           // "Using a background color on a text layer"  Determines the fill, so we can show a hex value.
         )
       );
@@ -165,6 +165,7 @@ export function customCheckTextFills(node, errors) {
     // check to see why with our default linting function for fills.
   } else {
     checkBtns(node, errors);
+    checkFloatingShadowBtn(node, errors);
   }
 }
 
@@ -232,21 +233,41 @@ export function checkEffects(node, errors) {
 
 export function checkBtns(node, errors) {
   if (node.name === "btn") {
-    let childText = node.children[0].characters
-   
-    if (childText.split('\n').length > 1) {
+    let childText = node.children[0].characters;
+
+    if (childText.split("\n").length > 1) {
       return errors.push(
         createErrorObject(
           childText, // Node object we use to reference the error (id, layer name, etc)
           "text", // Type of error (fill, text, effect, etc)
           "Multi line text found In Button" // Message we show to the user
-          // "In Button" 
+          // "In Button"
           // Determines the fill, so we can show a hex value.
         )
       );
     } else {
-      return ;
-        }
+      return;
+    }
+  }
+}
+
+export function checkFloatingShadowBtn(node, errors) {
+  if (node.name === "floatingActionBtn") {
+    let childText = node.name;
+    // let floatingActionBtn = node;
+    if (node.effects.length === 0) {
+      return errors.push(
+        createErrorObject(
+          childText, // Node object we use to reference the error (id, layer name, etc)
+          "text", // Type of error (fill, text, effect, etc)
+          "Multi line text found In Button" // Message we show to the user
+          // "In Button"
+          // Determines the fill, so we can show a hex value.
+        )
+      );
+    } else {
+      return;
+    }
   }
 }
 
@@ -265,9 +286,10 @@ export function checkStrokes(node, errors) {
 
       let currentStyle = `${strokeObject.strokeFills} / ${strokeObject.strokeWeight} / ${strokeObject.strokeAlign}`;
 
-      return errors.push(
+      return errors
+        .push
         // createErrorObject(node, "stroke", "Missing stroke style", currentStyle)
-      );
+        ();
     } else {
       return;
     }
@@ -296,9 +318,10 @@ export function checkType(node, errors) {
 
     let currentStyle = `${textObject.font} ${textObject.fontStyle} / ${textObject.fontSize} (${textObject.lineHeight} line-height)`;
 
-    return errors.push(
+    return errors
+      .push
       // createErrorObject(node, "text", "Missing text style", currentStyle)
-    );
+      ();
   } else {
     return;
   }
