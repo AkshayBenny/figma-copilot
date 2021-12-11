@@ -168,6 +168,8 @@ export function customCheckTextFills(node, errors) {
     checkAlign(node, errors);
     checkFloatingShadowBtn(node, errors);
     checkFont(node, errors);
+    checkLabelLength(node, errors);
+    checkLabelOpacity(node, errors);
   }
 }
 
@@ -253,20 +255,72 @@ export function checkBtns(node, errors) {
   }
 }
 
-// export function checkBtnIcon(node, errors) {
-//   if (node.name === 'btn') {
-//     let childText = node.children
-//   if (childText.length > 2) {
-//     return errors.push(
-//       createErrorObject(
-//         childText,
-//         'text',
-//         'Too many icons per button'
-//       )
-//     )
-//   }
-//   }
-// }
+export function checkLabelLength(node, errors) {
+  if (node.name === "textField") {
+    let childText = node.children.length;
+    if (childText === 0) {
+      return errors.push(
+        createErrorObject(
+          childText, // Node object we use to reference the error (id, layer name, etc)
+          "text", // Type of error (fill, text, effect, etc)
+          "No Label Found add a new label" // Message we show to the user
+          // "In Button"
+          // Determines the fill, so we can show a hex value.
+        )
+      );
+    } else {
+      return;
+    }
+  }
+}
+
+export function checkLabelOpacity(node, errors) {
+  if (node.name === "textField" && node.children.length != 0) {
+    let childText = node.children[0].opacity;
+    if (childText != 0.5) {
+      return errors.push(
+        createErrorObject(
+          childText, // Node object we use to reference the error (id, layer name, etc)
+          "text", // Type of error (fill, text, effect, etc)
+          "Opacity of the label is not 0.5" // Message we show to the user
+          // "In Button"
+          // Determines the fill, so we can show a hex value.
+        )
+      );
+    } else {
+      return;
+    }
+  }
+}
+
+export function checkFont(node, errors) {
+  console.log(
+    node,
+    "🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄"
+  );
+  if (node.type === "TEXT") {
+    let childText = node.fontName.family;
+    if (
+      childText === "Redacted Script" ||
+      childText === "Abril Fatface" ||
+      childText === "Bebas Neue" ||
+      childText === "Lobster" ||
+      childText === "Comfortaa"
+    ) {
+      return errors.push(
+        createErrorObject(
+          childText, // Node object we use to reference the error (id, layer name, etc)
+          "text", // Type of error (fill, text, effect, etc)
+          "Display font is not allowed" // Message we show to the user
+          // "In Button"
+          // Determines the fill, so we can show a hex value.
+        )
+      );
+    } else {
+      return;
+    }
+  }
+}
 
 export function checkAlign(node, errors) {
   let childText = node.name;
@@ -293,25 +347,25 @@ export function checkAlign(node, errors) {
   }
 }
 
-export function checkFont(node, errors) {
-  if (node.name === "body") {
-    let childText = node.fontName;
-    if (
-      childText.family === "Display" ||
-      childText.family === "Lucida Calligraphy" ||
-      childText.family === "Lucida Handwriting" ||
-      childText.family === "Ruslan Display"
-    ) {
-      return errors.push(
-        createErrorObject(
-          childText,
-          "text",
-          "font family not good for body texts"
-        )
-      );
-    }
-  }
-}
+// export function checkFont(node, errors) {
+//   if (node.name === "body") {
+//     let childText = node.fontName;
+//     if (
+//       childText.family === "Display" ||
+//       childText.family === "Lucida Calligraphy" ||
+//       childText.family === "Lucida Handwriting" ||
+//       childText.family === "Ruslan Display"
+//     ) {
+//       return errors.push(
+//         createErrorObject(
+//           childText,
+//           "text",
+//           "font family not good for body texts"
+//         )
+//       );
+//     }
+//   }
+// }
 
 export function checkFloatingShadowBtn(node, errors) {
   if (node.name === "floatingActionBtn") {
@@ -322,7 +376,7 @@ export function checkFloatingShadowBtn(node, errors) {
         createErrorObject(
           childText, // Node object we use to reference the error (id, layer name, etc)
           "text", // Type of error (fill, text, effect, etc)
-          "Shadow effect not found found for floating action button" // Message we show to the user
+          "Shadow effect not found for floating action button" // Message we show to the user
           // "In Button"
           // Determines the fill, so we can show a hex value.
         )

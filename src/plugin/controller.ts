@@ -3,9 +3,10 @@ import {
   // checkEffects,
   checkBtns,
   checkFont,
-  // checkBtnIcon,
   checkFloatingShadowBtn,
-  checkAlign
+  checkAlign,
+  checkLabelLength,
+  checkLabelOpacity
   // checkStrokes,
   // checkType,
   // customCheckTextFills
@@ -330,8 +331,9 @@ figma.ui.onmessage = msg => {
     checkBtns(node, errors);
     checkFloatingShadowBtn(node, errors);
     checkFont(node, errors);
-    // checkBtnIcon(node, errors)
     checkAlign(node, errors);
+    checkLabelLength(node, errors);
+    checkLabelOpacity(node, errors);
     checkFloatingShadowBtn(node, errors);
     // checkRadius(node, errors, borderRadiusArray);
     // checkEffects(node, errors);
@@ -347,7 +349,8 @@ figma.ui.onmessage = msg => {
     checkFloatingShadowBtn(node, errors);
     checkAlign(node, errors);
     checkFont(node, errors);
-    // checkBtnIcon(node, errors)
+    checkLabelLength(node, errors);
+    checkLabelOpacity(node, errors);
 
     return errors;
   }
@@ -368,7 +371,8 @@ figma.ui.onmessage = msg => {
     checkFloatingShadowBtn(node, errors);
     checkAlign(node, errors);
     checkFont(node, errors);
-    // checkBtnIcon(node, errors)
+    checkLabelLength(node, errors);
+    checkLabelOpacity(node, errors);
     // checkStrokes(node, errors);
     // checkRadius(node, errors, borderRadiusArray);
     // checkEffects(node, errors);
@@ -384,7 +388,8 @@ figma.ui.onmessage = msg => {
     checkFloatingShadowBtn(node, errors);
     checkAlign(node, errors);
     checkFont(node, errors);
-    // checkBtnIcon(node, errors)
+    checkLabelLength(node, errors);
+    checkLabelOpacity(node, errors);
 
     // We could also comment out checkBtns and use a custom function instead
     // Take a look at line 122 in lintingFunction.ts for an example.
@@ -402,7 +407,9 @@ figma.ui.onmessage = msg => {
     checkFloatingShadowBtn(node, errors);
     checkAlign(node, errors);
     checkFont(node, errors);
-    // checkBtnIcon(node, errors)
+    checkLabelLength(node, errors);
+    checkLabelOpacity(node, errors);
+
     // checkRadius(node, errors, borderRadiusArray);
     // checkStrokes(node, errors);
     // checkEffects(node, errors);
@@ -419,7 +426,9 @@ figma.ui.onmessage = msg => {
       checkFloatingShadowBtn(node, errors);
       checkAlign(node, errors);
       checkFont(node, errors);
-      // checkBtnIcon(node, errors)
+      checkLabelLength(node, errors);
+      checkLabelOpacity(node, errors);
+
       // checkStrokes(node, errors);
       // checkEffects(node, errors);
     }
@@ -434,7 +443,9 @@ figma.ui.onmessage = msg => {
     checkFloatingShadowBtn(node, errors);
     checkAlign(node, errors);
     checkFont(node, errors);
-    // checkBtnIcon(node, errors)
+    checkLabelLength(node, errors);
+    checkLabelOpacity(node, errors);
+
     // checkStrokes(node, errors);
     // checkEffects(node, errors);
 
