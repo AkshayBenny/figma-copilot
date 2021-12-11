@@ -165,8 +165,10 @@ export function customCheckTextFills(node, errors) {
     // check to see why with our default linting function for fills.
   } else {
     checkBtns(node, errors);
-    checkFloatingShadowBtn(node, errors);
     checkAlign(node, errors);
+    checkFloatingShadowBtn(node, errors);
+    checkFont(node, errors);
+    // checkBtnIcon(node, errors)
   }
 }
 
@@ -216,7 +218,7 @@ export function checkEffects(node, errors) {
         effectsArray.unshift(effectsObject);
       });
 
-      let currentStyle = effectsArray[0].value;
+      // let currentStyle = effectsArray[0].value;
 
       return errors.push(
         createErrorObject(
@@ -251,8 +253,21 @@ export function checkBtns(node, errors) {
     }
   }
 }
+
+// export function checkBtnIcon(node, errors) {
+//   if (node.name === 'btn') {
+//     let childText = node.children;
+//     if (childText.length > 2) {
+//       return errors.push(
+//         createErrorObject(childText, 'text', 'Too many icons per button')
+//       );
+//     }
+//   }
+// }
+
 export function checkAlign(node, errors) {
   let childText = node.name;
+
   if (node.name === "btn") {
     var a = node.paddingTop;
     var b = node.paddingBottom;
@@ -266,9 +281,49 @@ export function checkAlign(node, errors) {
         createErrorObject(
           childText, // Node object we use to reference the error (id, layer name, etc)
           "text", // Type of error (fill, text, effect, etc)
-          "Multi line text found In Button" // Message we show to the user
+          "Align issue" // Message we show to the user
           // "In Button"
           // Determines the fill, so we can show a hex value.
+        )
+      );
+    }
+  }
+}
+
+export function checkFloatingShadowBtn(node, errors) {
+  if (node.name === "floatingActionBtn") {
+    let childText = node.name;
+    // let floatingActionBtn = node;
+    if (node.effects.length === 0) {
+      return errors.push(
+        createErrorObject(
+          childText, // Node object we use to reference the error (id, layer name, etc)
+          "text", // Type of error (fill, text, effect, etc)
+          "Shadow effect not found found for floating action button" // Message we show to the user
+          // "In Button"
+          // Determines the fill, so we can show a hex value.
+        )
+      );
+    } else {
+      return;
+    }
+  }
+}
+
+export function checkFont(node, errors) {
+  if (node.name === "body") {
+    let childText = node.fontName;
+    if (
+      childText.family === "Display" ||
+      childText.family === "Lucida Calligraphy" ||
+      childText.family === "Lucida Handwriting" ||
+      childText.family === "Ruslan Display"
+    ) {
+      return errors.push(
+        createErrorObject(
+          childText,
+          "text",
+          "font family not good for body texts"
         )
       );
     }
@@ -288,7 +343,7 @@ export function checkStrokes(node, errors) {
       strokeObject.strokeAlign = node.strokeAlign;
       strokeObject.strokeFills = determineFill(node.strokes);
 
-      let currentStyle = `${strokeObject.strokeFills} / ${strokeObject.strokeWeight} / ${strokeObject.strokeAlign}`;
+      // let currentStyle = `${strokeObject.strokeFills} / ${strokeObject.strokeWeight} / ${strokeObject.strokeAlign}`;
 
       return errors
         .push
@@ -320,7 +375,7 @@ export function checkType(node, errors) {
       textObject.lineHeight = "Auto";
     }
 
-    let currentStyle = `${textObject.font} ${textObject.fontStyle} / ${textObject.fontSize} (${textObject.lineHeight} line-height)`;
+    // let currentStyle = `${textObject.font} ${textObject.fontStyle} / ${textObject.fontSize} (${textObject.lineHeight} line-height)`;
 
     return errors
       .push
