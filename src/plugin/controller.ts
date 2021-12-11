@@ -2,7 +2,8 @@ import {
   // checkRadius,
   // checkEffects,
   checkBtns,
-  checkAlign
+  checkAlign,
+  checkFloatingShadowBtn
   // checkStrokes,
   // checkType,
   // customCheckTextFills
@@ -326,6 +327,7 @@ figma.ui.onmessage = msg => {
 
     checkBtns(node, errors);
     checkAlign(node, errors);
+    checkFloatingShadowBtn(node, errors);
     // checkRadius(node, errors, borderRadiusArray);
     // checkEffects(node, errors);
     // checkStrokes(node, errors);
@@ -338,6 +340,7 @@ figma.ui.onmessage = msg => {
 
     checkBtns(node, errors);
     checkAlign(node, errors);
+    checkFloatingShadowBtn(node, errors);
 
     return errors;
   }
@@ -356,6 +359,7 @@ figma.ui.onmessage = msg => {
 
     checkBtns(node, errors);
     checkAlign(node, errors);
+    checkFloatingShadowBtn(node, errors);
     // checkStrokes(node, errors);
     // checkRadius(node, errors, borderRadiusArray);
     // checkEffects(node, errors);
@@ -369,6 +373,7 @@ figma.ui.onmessage = msg => {
     // checkType(node, errors);
     checkBtns(node, errors);
     checkAlign(node, errors);
+    checkFloatingShadowBtn(node, errors);
 
     // We could also comment out checkBtns and use a custom function instead
     // Take a look at line 122 in lintingFunction.ts for an example.
@@ -384,6 +389,7 @@ figma.ui.onmessage = msg => {
 
     checkBtns(node, errors);
     checkAlign(node, errors);
+    checkFloatingShadowBtn(node, errors);
     // checkRadius(node, errors, borderRadiusArray);
     // checkStrokes(node, errors);
     // checkEffects(node, errors);
@@ -398,6 +404,7 @@ figma.ui.onmessage = msg => {
     if (lintVectors === true) {
       checkBtns(node, errors);
       checkAlign(node, errors);
+      checkFloatingShadowBtn(node, errors);
       // checkStrokes(node, errors);
       // checkEffects(node, errors);
     }
@@ -410,6 +417,7 @@ figma.ui.onmessage = msg => {
 
     checkBtns(node, errors);
     checkAlign(node, errors);
+    checkFloatingShadowBtn(node, errors);
     // checkStrokes(node, errors);
     // checkEffects(node, errors);
 
