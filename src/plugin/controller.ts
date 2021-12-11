@@ -2,6 +2,7 @@ import {
   // checkRadius,
   // checkEffects,
   checkBtns,
+  checkAlign
   // checkStrokes,
   // checkType,
   // customCheckTextFills
@@ -240,9 +241,12 @@ figma.ui.onmessage = msg => {
         errors: lint(nodes)
       });
 
-      figma.notify(`Figma Copilot is running and will auto refresh for changes`, {
-        timeout: 2000
-      });
+      figma.notify(
+        `Figma Copilot is running and will auto refresh for changes`,
+        {
+          timeout: 2000
+        }
+      );
 
       figma.clientStorage.getAsync("storedErrorsToIgnore").then(result => {
         figma.ui.postMessage({
@@ -321,6 +325,7 @@ figma.ui.onmessage = msg => {
     // }
 
     checkBtns(node, errors);
+    checkAlign(node, errors);
     // checkRadius(node, errors, borderRadiusArray);
     // checkEffects(node, errors);
     // checkStrokes(node, errors);
@@ -332,6 +337,7 @@ figma.ui.onmessage = msg => {
     let errors = [];
 
     checkBtns(node, errors);
+    checkAlign(node, errors);
 
     return errors;
   }
@@ -349,6 +355,7 @@ figma.ui.onmessage = msg => {
     let errors = [];
 
     checkBtns(node, errors);
+    checkAlign(node, errors);
     // checkStrokes(node, errors);
     // checkRadius(node, errors, borderRadiusArray);
     // checkEffects(node, errors);
@@ -361,6 +368,7 @@ figma.ui.onmessage = msg => {
 
     // checkType(node, errors);
     checkBtns(node, errors);
+    checkAlign(node, errors);
 
     // We could also comment out checkBtns and use a custom function instead
     // Take a look at line 122 in lintingFunction.ts for an example.
@@ -375,6 +383,7 @@ figma.ui.onmessage = msg => {
     let errors = [];
 
     checkBtns(node, errors);
+    checkAlign(node, errors);
     // checkRadius(node, errors, borderRadiusArray);
     // checkStrokes(node, errors);
     // checkEffects(node, errors);
@@ -388,6 +397,7 @@ figma.ui.onmessage = msg => {
     // This can be enabled by the user in settings.
     if (lintVectors === true) {
       checkBtns(node, errors);
+      checkAlign(node, errors);
       // checkStrokes(node, errors);
       // checkEffects(node, errors);
     }
@@ -399,6 +409,7 @@ figma.ui.onmessage = msg => {
     let errors = [];
 
     checkBtns(node, errors);
+    checkAlign(node, errors);
     // checkStrokes(node, errors);
     // checkEffects(node, errors);
 
