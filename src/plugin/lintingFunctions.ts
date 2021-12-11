@@ -166,6 +166,7 @@ export function customCheckTextFills(node, errors) {
   } else {
     checkBtns(node, errors);
     checkFloatingShadowBtn(node, errors);
+    checkAlign(node, errors);
   }
 }
 
@@ -250,12 +251,17 @@ export function checkBtns(node, errors) {
     }
   }
 }
+export function checkAlign(node, errors) {
+  let childText = node.name;
+  if (node.name === "btn") {
+    var a = node.paddingTop;
+    var b = node.paddingBottom;
+    var c = node.paddingLeft;
+    var d = node.paddingRight;
 
-export function checkFloatingShadowBtn(node, errors) {
-  if (node.name === "floatingActionBtn") {
-    let childText = node.name;
-    // let floatingActionBtn = node;
-    if (node.effects.length === 0) {
+    if (a === b && c === d) {
+      return;
+    } else {
       return errors.push(
         createErrorObject(
           childText, // Node object we use to reference the error (id, layer name, etc)
@@ -265,8 +271,6 @@ export function checkFloatingShadowBtn(node, errors) {
           // Determines the fill, so we can show a hex value.
         )
       );
-    } else {
-      return;
     }
   }
 }
