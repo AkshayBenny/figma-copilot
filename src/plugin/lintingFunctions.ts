@@ -284,9 +284,29 @@ export function checkAlign(node, errors) {
         createErrorObject(
           childText, // Node object we use to reference the error (id, layer name, etc)
           "text", // Type of error (fill, text, effect, etc)
-          "Align issue" // Message we show to the user
+          "Button text not aligned" // Message we show to the user
           // "In Button"
           // Determines the fill, so we can show a hex value.
+        )
+      );
+    }
+  }
+}
+
+export function checkFont(node, errors) {
+  if (node.name === "body") {
+    let childText = node.fontName;
+    if (
+      childText.family === "Display" ||
+      childText.family === "Lucida Calligraphy" ||
+      childText.family === "Lucida Handwriting" ||
+      childText.family === "Ruslan Display"
+    ) {
+      return errors.push(
+        createErrorObject(
+          childText,
+          "text",
+          "font family not good for body texts"
         )
       );
     }
@@ -309,26 +329,6 @@ export function checkFloatingShadowBtn(node, errors) {
       );
     } else {
       return;
-    }
-  }
-}
-
-export function checkFont(node, errors) {
-  if (node.name === "body") {
-    let childText = node.fontName;
-    if (
-      childText.family === "Display" ||
-      childText.family === "Lucida Calligraphy" ||
-      childText.family === "Lucida Handwriting" ||
-      childText.family === "Ruslan Display"
-    ) {
-      return errors.push(
-        createErrorObject(
-          childText,
-          "text",
-          "font family not good for body texts"
-        )
-      );
     }
   }
 }
