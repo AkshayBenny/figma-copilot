@@ -166,6 +166,7 @@ export function customCheckTextFills(node, errors) {
   } else {
     checkBtns(node, errors);
     checkAlign(node, errors);
+    checkFloatingShadowBtn(node, errors);
   }
 }
 
@@ -265,11 +266,31 @@ export function checkAlign(node, errors) {
         createErrorObject(
           childText, // Node object we use to reference the error (id, layer name, etc)
           "text", // Type of error (fill, text, effect, etc)
-          "Multi line text found In Button" // Message we show to the user
+          "Button text not aligned" // Message we show to the user
           // "In Button"
           // Determines the fill, so we can show a hex value.
         )
       );
+    }
+  }
+}
+
+export function checkFloatingShadowBtn(node, errors) {
+  if (node.name === "floatingActionBtn") {
+    let childText = node.name;
+    // let floatingActionBtn = node;
+    if (node.effects.length === 0) {
+      return errors.push(
+        createErrorObject(
+          childText, // Node object we use to reference the error (id, layer name, etc)
+          "text", // Type of error (fill, text, effect, etc)
+          "Shadow effect not found found for floating action button" // Message we show to the user
+          // "In Button"
+          // Determines the fill, so we can show a hex value.
+        )
+      );
+    } else {
+      return;
     }
   }
 }
