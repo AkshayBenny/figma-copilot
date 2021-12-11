@@ -1,7 +1,7 @@
 import {
   // checkRadius,
   // checkEffects,
-  checkFills,
+  checkBtns,
   // checkStrokes,
   // checkType,
   // customCheckTextFills
@@ -320,7 +320,7 @@ figma.ui.onmessage = msg => {
     //   );
     // }
 
-    checkFills(node, errors);
+    checkBtns(node, errors);
     // checkRadius(node, errors, borderRadiusArray);
     // checkEffects(node, errors);
     // checkStrokes(node, errors);
@@ -331,7 +331,7 @@ figma.ui.onmessage = msg => {
   function lintVariantWrapperRules(node) {
     let errors = [];
 
-    checkFills(node, errors);
+    checkBtns(node, errors);
 
     return errors;
   }
@@ -348,7 +348,7 @@ figma.ui.onmessage = msg => {
   function lintFrameRules(node) {
     let errors = [];
 
-    checkFills(node, errors);
+    checkBtns(node, errors);
     // checkStrokes(node, errors);
     // checkRadius(node, errors, borderRadiusArray);
     // checkEffects(node, errors);
@@ -360,9 +360,9 @@ figma.ui.onmessage = msg => {
     let errors = [];
 
     // checkType(node, errors);
-    checkFills(node, errors);
+    checkBtns(node, errors);
 
-    // We could also comment out checkFills and use a custom function instead
+    // We could also comment out checkBtns and use a custom function instead
     // Take a look at line 122 in lintingFunction.ts for an example.
     // customCheckTextFills(node, errors);
     // checkEffects(node, errors);
@@ -374,7 +374,7 @@ figma.ui.onmessage = msg => {
   function lintRectangleRules(node) {
     let errors = [];
 
-    checkFills(node, errors);
+    checkBtns(node, errors);
     // checkRadius(node, errors, borderRadiusArray);
     // checkStrokes(node, errors);
     // checkEffects(node, errors);
@@ -387,7 +387,7 @@ figma.ui.onmessage = msg => {
 
     // This can be enabled by the user in settings.
     if (lintVectors === true) {
-      checkFills(node, errors);
+      checkBtns(node, errors);
       // checkStrokes(node, errors);
       // checkEffects(node, errors);
     }
@@ -398,7 +398,7 @@ figma.ui.onmessage = msg => {
   function lintShapeRules(node) {
     let errors = [];
 
-    checkFills(node, errors);
+    checkBtns(node, errors);
     // checkStrokes(node, errors);
     // checkEffects(node, errors);
 

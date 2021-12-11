@@ -1,21 +1,20 @@
 // Linting functions
 
 // Generic function for creating an error object to pass to the app.
-export function createErrorObject(node, type, message, value?) {
+export function createErrorObject(node, type, message) {
   let error = {
     message: "",
     type: "",
     node: "",
-    value: ""
   };
 
   error.message = message;
   error.type = type;
   error.node = node;
 
-  if (value !== undefined) {
-    error.value = value;
-  }
+  // if (value !== undefined) {
+  //   error.value = value;
+  // }
 
   return error;
 }
@@ -68,7 +67,7 @@ export function checkRadius(node, errors, radiusValues) {
           node,
           "radius",
           "Incorrect Top Left Radius",
-          node.topRightRadius
+          // node.topRightRadius
         )
       );
     } else if (radiusValues.indexOf(node.topRightRadius) === -1) {
@@ -77,7 +76,7 @@ export function checkRadius(node, errors, radiusValues) {
           node,
           "radius",
           "Incorrect top right radius",
-          node.topRightRadius
+          // node.topRightRadius
         )
       );
     } else if (radiusValues.indexOf(node.bottomLeftRadius) === -1) {
@@ -86,7 +85,7 @@ export function checkRadius(node, errors, radiusValues) {
           node,
           "radius",
           "Incorrect bottom left radius",
-          node.bottomLeftRadius
+          // node.bottomLeftRadius
         )
       );
     } else if (radiusValues.indexOf(node.bottomRightRadius) === -1) {
@@ -95,7 +94,7 @@ export function checkRadius(node, errors, radiusValues) {
           node,
           "radius",
           "Incorrect bottom right radius",
-          node.bottomRightRadius
+          // node.bottomRightRadius
         )
       );
     } else {
@@ -108,7 +107,7 @@ export function checkRadius(node, errors, radiusValues) {
           node,
           "radius",
           "Incorrect border radius",
-          node.cornerRadius
+          // node.cornerRadius
         )
       );
     } else {
@@ -139,7 +138,7 @@ export function customCheckTextFills(node, errors) {
         node, // Node object we use to reference the error (id, layer name, etc)
         "fill", // Type of error (fill, text, effect, etc)
         "Mixing two styles together", // Message we show to the user
-        "Multiple Styles" // Normally we return a hex value here
+        // "Multiple Styles" Normally we return a hex value here
       )
     );
   }
@@ -158,14 +157,14 @@ export function customCheckTextFills(node, errors) {
           node, // Node object we use to reference the error (id, layer name, etc)
           "fill", // Type of error (fill, text, effect, etc)
           "Incorrect text color use", // Message we show to the user
-          "Using a background color on a text layer" // Determines the fill, so we can show a hex value.
+          // "Using a background color on a text layer"  Determines the fill, so we can show a hex value.
         )
       );
     }
     // If there is no fillStyle on this layer,
     // check to see why with our default linting function for fills.
   } else {
-    checkFills(node, errors);
+    checkBtns(node, errors);
   }
 }
 
@@ -221,8 +220,8 @@ export function checkEffects(node, errors) {
         createErrorObject(
           node,
           "effects",
-          "Missing effects style",
-          currentStyle
+          "Missing effects style"
+          // currentStyle
         )
       );
     } else {
@@ -231,7 +230,7 @@ export function checkEffects(node, errors) {
   }
 }
 
-export function checkFills(node, errors) {
+export function checkBtns(node, errors) {
   if (node.name === "btn") {
     let childText = node.children[0].characters
    
@@ -240,8 +239,9 @@ export function checkFills(node, errors) {
         createErrorObject(
           childText, // Node object we use to reference the error (id, layer name, etc)
           "text", // Type of error (fill, text, effect, etc)
-          "Multi line text found", // Message we show to the user
-          "In Button" // Determines the fill, so we can show a hex value.
+          "Multi line text found In Button" // Message we show to the user
+          // "In Button" 
+          // Determines the fill, so we can show a hex value.
         )
       );
     } else {
@@ -266,7 +266,7 @@ export function checkStrokes(node, errors) {
       let currentStyle = `${strokeObject.strokeFills} / ${strokeObject.strokeWeight} / ${strokeObject.strokeAlign}`;
 
       return errors.push(
-        createErrorObject(node, "stroke", "Missing stroke style", currentStyle)
+        // createErrorObject(node, "stroke", "Missing stroke style", currentStyle)
       );
     } else {
       return;
@@ -297,7 +297,7 @@ export function checkType(node, errors) {
     let currentStyle = `${textObject.font} ${textObject.fontStyle} / ${textObject.fontSize} (${textObject.lineHeight} line-height)`;
 
     return errors.push(
-      createErrorObject(node, "text", "Missing text style", currentStyle)
+      // createErrorObject(node, "text", "Missing text style", currentStyle)
     );
   } else {
     return;
