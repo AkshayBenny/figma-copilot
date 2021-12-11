@@ -294,10 +294,6 @@ export function checkLabelOpacity(node, errors) {
 }
 
 export function checkFont(node, errors) {
-  console.log(
-    node,
-    "🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄"
-  );
   if (node.type === "TEXT") {
     let childText = node.fontName.family;
     if (
