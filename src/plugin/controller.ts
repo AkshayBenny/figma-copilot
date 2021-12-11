@@ -1,9 +1,9 @@
 import {
-  checkRadius,
-  checkEffects,
+  // checkRadius,
+  // checkEffects,
   checkFills,
-  checkStrokes,
-  checkType,
+  // checkStrokes,
+  // checkType,
   // customCheckTextFills
   // customCheckTextFills,
 } from "./lintingFunctions";
@@ -240,7 +240,7 @@ figma.ui.onmessage = msg => {
         errors: lint(nodes)
       });
 
-      figma.notify(`Design lint is running and will auto refresh for changes`, {
+      figma.notify(`Figma Copilot is running and will auto refresh for changes`, {
         timeout: 2000
       });
 
@@ -321,9 +321,9 @@ figma.ui.onmessage = msg => {
     // }
 
     checkFills(node, errors);
-    checkRadius(node, errors, borderRadiusArray);
-    checkEffects(node, errors);
-    checkStrokes(node, errors);
+    // checkRadius(node, errors, borderRadiusArray);
+    // checkEffects(node, errors);
+    // checkStrokes(node, errors);
 
     return errors;
   }
@@ -339,8 +339,8 @@ figma.ui.onmessage = msg => {
   function lintLineRules(node) {
     let errors = [];
 
-    checkStrokes(node, errors);
-    checkEffects(node, errors);
+    // checkStrokes(node, errors);
+    // checkEffects(node, errors);
 
     return errors;
   }
@@ -349,9 +349,9 @@ figma.ui.onmessage = msg => {
     let errors = [];
 
     checkFills(node, errors);
-    checkStrokes(node, errors);
-    checkRadius(node, errors, borderRadiusArray);
-    checkEffects(node, errors);
+    // checkStrokes(node, errors);
+    // checkRadius(node, errors, borderRadiusArray);
+    // checkEffects(node, errors);
 
     return errors;
   }
@@ -359,14 +359,14 @@ figma.ui.onmessage = msg => {
   function lintTextRules(node) {
     let errors = [];
 
-    checkType(node, errors);
+    // checkType(node, errors);
     checkFills(node, errors);
 
     // We could also comment out checkFills and use a custom function instead
     // Take a look at line 122 in lintingFunction.ts for an example.
     // customCheckTextFills(node, errors);
-    checkEffects(node, errors);
-    checkStrokes(node, errors);
+    // checkEffects(node, errors);
+    // checkStrokes(node, errors);
 
     return errors;
   }
@@ -375,9 +375,9 @@ figma.ui.onmessage = msg => {
     let errors = [];
 
     checkFills(node, errors);
-    checkRadius(node, errors, borderRadiusArray);
-    checkStrokes(node, errors);
-    checkEffects(node, errors);
+    // checkRadius(node, errors, borderRadiusArray);
+    // checkStrokes(node, errors);
+    // checkEffects(node, errors);
 
     return errors;
   }
@@ -388,8 +388,8 @@ figma.ui.onmessage = msg => {
     // This can be enabled by the user in settings.
     if (lintVectors === true) {
       checkFills(node, errors);
-      checkStrokes(node, errors);
-      checkEffects(node, errors);
+      // checkStrokes(node, errors);
+      // checkEffects(node, errors);
     }
 
     return errors;
@@ -399,8 +399,8 @@ figma.ui.onmessage = msg => {
     let errors = [];
 
     checkFills(node, errors);
-    checkStrokes(node, errors);
-    checkEffects(node, errors);
+    // checkStrokes(node, errors);
+    // checkEffects(node, errors);
 
     return errors;
   }

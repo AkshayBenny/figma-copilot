@@ -30,7 +30,7 @@ function EmptyState(props) {
         className="button button--primary button--full"
         onClick={onRunApp}
       >
-        Run Design Lint
+        Run Figma Copilot
       </button>
     </motion.div>
   );

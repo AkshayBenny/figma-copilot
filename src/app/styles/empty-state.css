@@ -17,7 +17,7 @@
 .empty-state__image {
   height: 64px;
   width: 64px;
-  background-color: #18a0fb;
+  background-color: black;
   border-radius: 100px;
   margin-bottom: 24px;
   margin-left: auto;
@@ -51,7 +51,7 @@
   height: 16px;
   width: 16px;
   border-radius: 16px;
-  background: #18a0fb;
+  background: black;
   margin: 8px;
   transform: scale(0.8);
   opacity: 0.8;

@@ -308,7 +308,7 @@
   line-height: 16px;
   letter-spacing: 0.01em;
   color: #ffffff;
-  background-color: #18a0fb;
+  background-color: black;
 }
 
 .button--primary:enabled:active {
@@ -350,7 +350,7 @@
 
 .button--secondary:enabled:active {
   padding: 4px 15px 4px 15px;
-  border: 2px solid #18a0fb;
+  border: 2px solid black;
 }
 
 .button--secondary:disabled {
@@ -451,7 +451,7 @@
 }
 
 .input:not(:disabled):focus:placeholder-shown {
-  border: 2px solid #18a0fb;
+  border: 2px solid black;
 }
 
 .input:not(:disabled):focus:not(:placeholder-shown) {
@@ -466,7 +466,7 @@
 .input:focus {
   padding: 8px 4px 8px 6px;
   color: #000000;
-  border: 2px solid #18a0fb;
+  border: 2px solid black;
   border-radius: 2px;
 }
 
@@ -526,7 +526,7 @@
   margin-left: -1px;
   padding: 8px 4px 8px 0;
   color: #000000;
-  border: 2px solid #18a0fb;
+  border: 2px solid black;
   border-radius: 2px;
 }
 
@@ -565,7 +565,7 @@
 }
 
 .input-icon__input:not(:disabled):focus:placeholder-shown {
-  border: 2px solid #18a0fb;
+  border: 2px solid black;
 }
 
 .input-icon__input:not(:disabled):focus:not(:placeholder-shown) {
@@ -609,7 +609,7 @@
 .textarea:focus {
   padding: 6px 6px 6px 6px;
   color: #000000;
-  border: 2px solid #18a0fb;
+  border: 2px solid black;
   border-radius: 2px;
 }
 
@@ -702,7 +702,7 @@
 .select-menu__button:active {
   width: 100%;
   padding: 5px 0 5px 7px;
-  border: 2px solid #18a0fb;
+  border: 2px solid black;
   outline: none;
 }
 
@@ -721,7 +721,7 @@
 .select-menu__button--active:hover {
   width: 100%;
   padding: 5px 0 5px 7px;
-  border: 2px solid #18a0fb;
+  border: 2px solid black;
   outline: none;
 }
 
@@ -800,7 +800,7 @@
 }
 
 .select-menu__list-item:hover {
-  background-color: #18a0fb;
+  background-color: black;
 }
 
 .select-menu__list-item-text {
@@ -972,8 +972,8 @@
 }
 
 .checkbox__box:checked + label:before {
-  border: 1px solid #18a0fb;
-  background-color: #18a0fb;
+  border: 1px solid black;
+  background-color: black;
   background-image: url("data:image/svg+xml;utf8,%3Csvg%20fill%3D%22none%22%20height%3D%227%22%20viewBox%3D%220%200%208%207%22%20width%3D%228%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20clip-rule%3D%22evenodd%22%20d%3D%22m1.17647%201.88236%201.88235%201.88236%203.76471-3.76472%201.17647%201.17648-4.94118%204.9412-3.05882-3.05884z%22%20fill%3D%22%23fff%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: 1px 2px;
@@ -1143,7 +1143,7 @@
 .onboarding-tip__msg a:active,
 .onboarding-tip__msg a:visited {
   text-decoration: none;
-  color: #18a0fb;
+  color: black;
 }
 
 .onboarding-tip--hidden {
@@ -1273,12 +1273,12 @@
 }
 
 .icon--blue {
-  color: #18a0fb;
+  color: black;
   background-position: 0 -64px;
 }
 
 .icon--white {
-  color: #18a0fb;
+  color: black;
   background-position: 0 -96px;
 }
 
@@ -1296,10 +1296,10 @@
 }
 
 .icon--button:active {
-  border: 1px solid #18a0fb;
+  border: 1px solid black;
   background-color: rgba(0, 0, 0, 0.06);
-  -webkit-box-shadow: inset 0 0 0 1px #18a0fb;
-  box-shadow: inset 0 0 0 1px #18a0fb;
+  -webkit-box-shadow: inset 0 0 0 1px black;
+  box-shadow: inset 0 0 0 1px black;
 }
 
 .icon--button:disabled {
@@ -1309,18 +1309,18 @@
 .icon--selected {
   color: #ffffff;
   border: 1px solid transparent;
-  background-color: #18a0fb;
+  background-color: black;
   background-position: -1px -97px;
 }
 
 .icon--selected:hover {
   color: #ffffff;
-  background-color: #18a0fb;
+  background-color: black;
 }
 
 .icon--selected:active {
   color: #ffffff;
-  background-color: #18a0fb;
+  background-color: black;
 }
 
 .icon--text {

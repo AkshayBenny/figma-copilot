@@ -165,7 +165,7 @@
 }
 
 .success-shape {
-  background-color: #18a0fb;
+  background-color: black;
   border-radius: 80px;
   height: 64px;
   width: 64px;
@@ -230,6 +230,6 @@
 }
 
 .settings-input:focus {
-  border: 1px solid #18a0fb;
+  border: 1px solid black;
   border-radius: 2px;
 }

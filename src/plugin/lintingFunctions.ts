@@ -119,6 +119,7 @@ export function checkRadius(node, errors, radiusValues) {
 
 // Custom Lint rule that isn't being used yet!
 // that ensures our text fills aren't using styles (design tokens) meant for backgrounds.
+
 export function customCheckTextFills(node, errors) {
   // Here we create an array of style keys (https://www.figma.com/plugin-docs/api/PaintStyle/#key)
   // that we want to make sure our text layers aren't using.
@@ -230,63 +231,22 @@ export function checkEffects(node, errors) {
   }
 }
 
-// function runPlugin() {
-//   let selectedElements = figma.currentPage.selection;
-
-//   console.log(selectedElements);
-
-//   if (selectedElements.length === 0) {
-//     figma.closePlugin('No elements selected');
-//   }
-
-//   if (selectedElements.length > 1) {
-//     figma.closePlugin('Select only one element');
-//   }
-
-//   let selectedName = selectedElements[0].name;
-
-//   function sameName(node) {
-//     return node.name === selectedName;
-//   }
-
-//   let hasSameName = figma.currentPage.findAll(sameName);
-
-//   figma.currentPage.selection = hasSameName;
-
-//   //see children
-//   console.log(selectedElements[0].children[0].name);
-
-//   // let childName = selectedElements[0].children[0].name;
-//   let childText = selectedElements[0].children[0].characters;
-
-//   if (childText.indexOf('\n')) {
-//     alert('Multiline text found in button');
-//   }
-//   figma.closePlugin();
-// }
-
-// runPlugin();
-
-
 export function checkFills(node, errors) {
-  if (node.fills.length && node.visible === true) {
-    if (
-      node.fillStyleId === "" &&
-      node.fills[0].type !== "IMAGE" &&
-      node.fills[0].visible === true
-    ) {
-      // We may need an array to loop through fill types.
+  if (node.name === "btn") {
+    let childText = node.children[0].characters
+   
+    if (childText.split('\n').length > 1) {
       return errors.push(
         createErrorObject(
-          node,
-          "fill",
-          "Missing fill style",
-          determineFill(node.fills)
+          childText, // Node object we use to reference the error (id, layer name, etc)
+          "text", // Type of error (fill, text, effect, etc)
+          "Multi line text found", // Message we show to the user
+          "In Button" // Determines the fill, so we can show a hex value.
         )
       );
     } else {
-      return;
-    }
+      return ;
+        }
   }
 }
 
