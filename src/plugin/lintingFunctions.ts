@@ -168,7 +168,6 @@ export function customCheckTextFills(node, errors) {
     checkAlign(node, errors);
     checkFloatingShadowBtn(node, errors);
     checkFont(node, errors);
-    // checkBtnIcon(node, errors)
   }
 }
 
@@ -218,7 +217,7 @@ export function checkEffects(node, errors) {
         effectsArray.unshift(effectsObject);
       });
 
-      // let currentStyle = effectsArray[0].value;
+      let currentStyle = effectsArray[0].value;
 
       return errors.push(
         createErrorObject(
@@ -256,12 +255,16 @@ export function checkBtns(node, errors) {
 
 // export function checkBtnIcon(node, errors) {
 //   if (node.name === 'btn') {
-//     let childText = node.children;
-//     if (childText.length > 2) {
-//       return errors.push(
-//         createErrorObject(childText, 'text', 'Too many icons per button')
-//       );
-//     }
+//     let childText = node.children
+//   if (childText.length > 2) {
+//     return errors.push(
+//       createErrorObject(
+//         childText,
+//         'text',
+//         'Too many icons per button'
+//       )
+//     )
+//   }
 //   }
 // }
 
@@ -343,7 +346,7 @@ export function checkStrokes(node, errors) {
       strokeObject.strokeAlign = node.strokeAlign;
       strokeObject.strokeFills = determineFill(node.strokes);
 
-      // let currentStyle = `${strokeObject.strokeFills} / ${strokeObject.strokeWeight} / ${strokeObject.strokeAlign}`;
+      let currentStyle = `${strokeObject.strokeFills} / ${strokeObject.strokeWeight} / ${strokeObject.strokeAlign}`;
 
       return errors
         .push
@@ -375,7 +378,7 @@ export function checkType(node, errors) {
       textObject.lineHeight = "Auto";
     }
 
-    // let currentStyle = `${textObject.font} ${textObject.fontStyle} / ${textObject.fontSize} (${textObject.lineHeight} line-height)`;
+    let currentStyle = `${textObject.font} ${textObject.fontStyle} / ${textObject.fontSize} (${textObject.lineHeight} line-height)`;
 
     return errors
       .push
