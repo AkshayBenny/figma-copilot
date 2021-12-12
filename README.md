@@ -17,7 +17,6 @@ While it's running, Figma Co-pilot will update automatically as you fix errors. 
 ## Table of contents
 * [Team members](#members)
 * [Team Id](#id)
-* [Link to product walkthrough](#Linktoproductwalkthrough)
 * [Features](#howitworks)
 * [To Run Locally use following commands](#run)
 * [Tooling / Tech stacks](#tts)
@@ -37,13 +36,7 @@ While it's running, Figma Co-pilot will update automatically as you fix errors. 
 ## Team Id
 * **THEKKINI**
 <a name="Linktoproductwalkthrough"></a>
-## Link to product walkthrough
-[![video thumbnail](https://github.com/itexpert2572000/Ctracker/blob/main/readme_assets/new%20thumbnail.jpg)](https://youtu.be/fcrjcRQzlWc)
-<!--
-Technologies which we are used in this project are:
-- [Flutter](https://flutter.dev/)
-- [Dart](https://dart.dev/)
-- [Firebase](https://firebase.google.com/) -->
+
 
 <a name="howitworks"></a>
 ## Features
