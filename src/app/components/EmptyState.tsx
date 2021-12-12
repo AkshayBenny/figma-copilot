@@ -20,17 +20,21 @@ function EmptyState(props) {
     >
       <div className="empty-state">
         <div className="empty-state__image">
-          <img className="layer-icon" src={require("../assets/layers.svg")} />
+          <img
+            className="layer-icon"
+            src={require("../assets/sreemikil.svg")}
+          />
         </div>
-        <div className="empty-state__title">
-          Select a frame or multiple frames
+        <div className="empty-state__title">Select a frame</div>
+        <div className="empty-state__subtitle">
+          Click any frame you want to check for error
         </div>
       </div>
       <button
         className="button button--primary button--full"
         onClick={onRunApp}
       >
-        Run Figma Copilot
+        Run Figma Co-pilot
       </button>
     </motion.div>
   );

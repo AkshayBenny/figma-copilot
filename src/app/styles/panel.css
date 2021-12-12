@@ -9,7 +9,7 @@
   background: #fff;
   display: flex;
   flex-flow: column;
-  box-shadow: 8px 0 16px rgba(0, 0, 0, 0.16);
+  box-shadow: 8px 0 16px #189ffb;
 }
 
 .panel-header {
@@ -165,7 +165,7 @@
 }
 
 .success-shape {
-  background-color: black;
+  background-color: #189ffb;
   border-radius: 80px;
   height: 64px;
   width: 64px;
@@ -230,6 +230,6 @@
 }
 
 .settings-input:focus {
-  border: 1px solid black;
+  border: 1px solid #189ffb;
   border-radius: 2px;
 }

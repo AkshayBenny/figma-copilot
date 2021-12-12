@@ -294,14 +294,11 @@ export function checkAlign(node, errors) {
 }
 
 export function checkFont(node, errors) {
+  console.log("runnig font check "); //
   if (node.name === "body") {
     let childText = node.fontName;
-    if (
-      childText.family === "Display" ||
-      childText.family === "Lucida Calligraphy" ||
-      childText.family === "Lucida Handwriting" ||
-      childText.family === "Ruslan Display"
-    ) {
+    if (childText.family === "Roboto") {
+      console.log("Font check IF conditon ");
       return errors.push(
         createErrorObject(
           childText,

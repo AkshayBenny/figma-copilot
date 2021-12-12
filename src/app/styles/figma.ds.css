@@ -44,7 +44,7 @@
   height: 32px;
   padding: 8px 4px 8px 8px;
   cursor: default;
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
   background-color: #ffffff;
   font-family: "Inter", sans-serif;
   font-weight: 400;
@@ -63,7 +63,7 @@
   height: 32px;
   padding: 8px 4px 8px 8px;
   cursor: default;
-  color: rgba(0, 0, 0, 0.8);
+  color: #189ffb;
   background-color: #ffffff;
   font-family: "Inter", sans-serif;
   font-weight: 600;
@@ -169,15 +169,15 @@
 }
 
 .type--figma-black {
-  color: #000000;
+  color: #189ffb;
 }
 
 .type--figma-black-3 {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
 }
 
 .type--figma-black-8 {
-  color: rgba(0, 0, 0, 0.8);
+  color: #189ffb;
 }
 
 .type--neg-small-normal {
@@ -304,19 +304,19 @@
 .button--primary {
   font-family: "Inter", sans-serif;
   font-weight: 500;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.01em;
   color: #ffffff;
-  background-color: black;
+  background-color: #189ffb;
 }
 
 .button--primary:enabled:active {
-  border: 2px solid rgba(0, 0, 0, 0.3);
+  border: 2px solid #189ffb;
 }
 
 .button--primary:disabled {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #189ffb;
 }
 
 .button--primary-destructive {
@@ -330,7 +330,7 @@
 }
 
 .button--primary-destructive:enabled:active {
-  border: 2px solid rgba(0, 0, 0, 0.3);
+  border: 2px solid #189ffb;
 }
 
 .button--primary-destructive:disabled {
@@ -344,7 +344,7 @@
   line-height: 16px;
   letter-spacing: 0.005em;
   color: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  border: 1px solid #189ffb;
   background-color: #ffffff;
 }
 
@@ -354,8 +354,8 @@
 }
 
 .button--secondary:disabled {
-  color: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: #189ffb;
+  border: 1px solid #189ffb;
 }
 
 .button--secondary-destructive {
@@ -400,7 +400,7 @@
   height: 30px;
   margin: 1px 0 1px 0;
   padding: 8px 4px 8px 7px;
-  color: rgba(0, 0, 0, 0.8);
+  color: #189ffb;
   border: 1px solid transparent;
   border-radius: 2px;
   outline: none;
@@ -408,37 +408,37 @@
 }
 
 .input:hover {
-  color: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #189ffb;
+  border: 1px solid #189ffb;
 }
 
 .input::-moz-selection {
-  color: #000000;
+  color: #189ffb;
   background-color: rgba(24, 145, 251, 0.3);
 }
 
 .input::selection {
-  color: #000000;
+  color: #189ffb;
   background-color: rgba(24, 145, 251, 0.3);
 }
 
 .input::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
   border: 1px solid transparent;
 }
 
 .input:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
   border: 1px solid transparent;
 }
 
 .input::-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
   border: 1px solid transparent;
 }
 
 .input::placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
   border: 1px solid transparent;
 }
 
@@ -451,7 +451,7 @@
 }
 
 .input:not(:disabled):focus:placeholder-shown {
-  border: 2px solid black;
+  border: 2px solid #189ffb;
 }
 
 .input:not(:disabled):focus:not(:placeholder-shown) {
@@ -465,14 +465,14 @@
 .input:active,
 .input:focus {
   padding: 8px 4px 8px 6px;
-  color: #000000;
-  border: 2px solid black;
+  color: #189ffb;
+  border: 2px solid #189ffb;
   border-radius: 2px;
 }
 
 .input:disabled {
   position: relative;
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
 }
 
 .input:disabled:active {
@@ -518,42 +518,42 @@
 
 .input-icon__input:hover {
   color: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid #189ffb;
 }
 
 .input-icon__input:active,
 .input-icon__input:focus {
   margin-left: -1px;
   padding: 8px 4px 8px 0;
-  color: #000000;
-  border: 2px solid black;
+  color: #189ffb;
+  border: 2px solid #189ffb;
   border-radius: 2px;
 }
 
 .input-icon__input::-moz-selection {
-  color: #000000;
+  color: #189ffb;
   background-color: rgba(24, 145, 251, 0.3);
 }
 
 .input-icon__input::selection {
-  color: #000000;
+  color: #189ffb;
   background-color: rgba(24, 145, 251, 0.3);
 }
 
 .input-icon__input::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
 }
 
 .input-icon__input:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
 }
 
 .input-icon__input::-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
 }
 
 .input-icon__input::placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
 }
 
 .input-icon__input:not(:disabled):not(:hover):placeholder-shown {
@@ -573,7 +573,7 @@
 }
 
 .input-icon__input:disabled {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
 }
 
 .input-icon__input:disabled:hover {
@@ -608,39 +608,39 @@
 .textarea:active,
 .textarea:focus {
   padding: 6px 6px 6px 6px;
-  color: #000000;
+  color: #189ffb;
   border: 2px solid black;
   border-radius: 2px;
 }
 
 .textarea::-moz-selection {
-  color: #000000;
+  color: #189ffb;
   background-color: rgba(24, 145, 251, 0.3);
 }
 
 .textarea::selection {
-  color: #000000;
+  color: #189ffb;
   background-color: rgba(24, 145, 251, 0.3);
 }
 
 .textarea::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
 }
 
 .textarea:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
 }
 
 .textarea::-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
 }
 
 .textarea::placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
 }
 
 .textarea:disabled {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
 }
 
 .textarea:disabled:focus,
@@ -890,7 +890,7 @@
 }
 
 .switch__toggle:checked + label:before {
-  background-color: #000000;
+  background-color: #189ffb;
 }
 
 .switch__toggle:checked + label:after {
@@ -924,7 +924,7 @@
   content: "";
   -webkit-transition: background-color 0 0.2s;
   transition: background-color 0 0.2s;
-  border: 1px solid #000000;
+  border: 1px solid #189ffb;
   border-radius: 6px;
   background-color: #ffffff;
 }
@@ -941,7 +941,7 @@
   transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
   transition: transform 0.2s, -webkit-transform 0.2s;
-  border: 1px solid #000000;
+  border: 1px solid #189ffb;
   border-radius: 50%;
   background-color: white;
 }
@@ -1151,7 +1151,7 @@
 }
 
 .onboarding-tip--light {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
 }
 
 .onboarding-tip--pt5 {
@@ -1262,13 +1262,13 @@
   width: 32px;
   height: 32px;
   cursor: default;
-  color: #000000;
+  color: #189ffb;
   background-repeat: no-repeat;
   background-position: 0 0;
 }
 
 .icon--black-3 {
-  color: rgba(0, 0, 0, 0.3);
+  color: #189ffb;
   background-position: 0 -32px;
 }
 

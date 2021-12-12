@@ -51,7 +51,7 @@ button:focus {
 .settings-button {
   border-radius: 8px;
   background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  border: 1px solid #189ffb;
 }
 
 .w12 {
@@ -69,7 +69,7 @@ body {
 
 #create {
   box-shadow: none;
-  background: black;
+  background: #189ffb;
   color: #fff;
 }
 
@@ -203,7 +203,7 @@ body {
 }
 
 .list-flex-row:hover {
-  border-color: black;
+  border-color: #189ffb;
 }
 
 .list-flex-row:hover .list-arrow-icon {

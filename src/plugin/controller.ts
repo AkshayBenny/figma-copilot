@@ -332,7 +332,7 @@ figma.ui.onmessage = msg => {
     checkFont(node, errors);
     // checkBtnIcon(node, errors)
     checkAlign(node, errors);
-    checkFloatingShadowBtn(node, errors);
+    //checkFloatingShadowBtn(node, errors);
     // checkRadius(node, errors, borderRadiusArray);
     // checkEffects(node, errors);
     // checkStrokes(node, errors);
