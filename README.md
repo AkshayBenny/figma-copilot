@@ -4,7 +4,7 @@
 # Figma Co-pilot
 ## Introduction         
 
-<img align="right" src="https://github.com/itexpert2572000/Ctracker/blob/cdbeca3a1a35a80b69e6399701b3edbaf3bbdc44/readme_assets/introban.png" />
+<img align="right" src="https://github.com/AkshayBenny/figma-copilot/blob/386572a252a7a68cacee6ee0458231e6377f3546/assets/demogif.gif" />
 
 
 
