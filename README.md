@@ -63,9 +63,9 @@ Technologies which we are used in this project are:
 
 <a name="what it do"></a>
 ## What does Figma Co-pilot check for by default?
-Out of the box, Figma Co-pilot only checks for guideline and layout erros in each layer. In Figma, best practice is to use styles and proper namming (also referred to as design tokens) on all of your layers, so your type, colors, spacing etc are all consistent and it will make the developer easy in identifying the elements and components.
+Out of the box, Figma Co-pilot only checks for guideline and layout erros in each layer. In Figma, the best practice is to use styles and proper naming (also referred to as design tokens) on all of your layers, so your type, colors, spacing etc are all consistent and it will help the developer easily identify the elements and components.
 
-That being said, Design Lint is ready for you to write custom rules for your team. For example, if you wanted to ensure that no text layers are using background specific colors, you could check for this, an example is provided below.
+That being said, Figma Co-pilot is ready for you to write custom rules for your team. For example, if you wanted to ensure that no text layers are using background specific colors, you can check out the example is provided below.
 
 <a name="tts"></a>
 ## Tooling / Tech Stacks
