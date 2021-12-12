@@ -1,16 +1,11 @@
 import {
-  // checkRadius,
-  // checkEffects,
   checkBtns,
   checkFont,
   checkFloatingShadowBtn,
   checkAlign,
+  checkFloatingAlign,
   checkLabelLength,
   checkLabelOpacity
-  // checkStrokes,
-  // checkType,
-  // customCheckTextFills
-  // customCheckTextFills,
 } from "./lintingFunctions";
 
 figma.showUI(__html__, { width: 360, height: 580 });
@@ -321,23 +316,14 @@ figma.ui.onmessage = msg => {
   function lintComponentRules(node) {
     let errors = [];
 
-    // Example of how we can make a custom rule specifically for components
-    // if (node.remote === false) {
-    //   errors.push(
-    //     createErrorObject(node, "component", "Component isn't from library")
-    //   );
-    // }
-
     checkBtns(node, errors);
     checkFloatingShadowBtn(node, errors);
     checkFont(node, errors);
     checkAlign(node, errors);
+    checkFloatingAlign(node, errors);
     checkLabelLength(node, errors);
     checkLabelOpacity(node, errors);
     checkFloatingShadowBtn(node, errors);
-    // checkRadius(node, errors, borderRadiusArray);
-    // checkEffects(node, errors);
-    // checkStrokes(node, errors);
 
     return errors;
   }
@@ -348,6 +334,7 @@ figma.ui.onmessage = msg => {
     checkBtns(node, errors);
     checkFloatingShadowBtn(node, errors);
     checkAlign(node, errors);
+    checkFloatingAlign(node, errors);
     checkFont(node, errors);
     checkLabelLength(node, errors);
     checkLabelOpacity(node, errors);
@@ -358,9 +345,6 @@ figma.ui.onmessage = msg => {
   function lintLineRules(node) {
     let errors = [];
 
-    // checkStrokes(node, errors);
-    // checkEffects(node, errors);
-
     return errors;
   }
 
@@ -370,12 +354,10 @@ figma.ui.onmessage = msg => {
     checkBtns(node, errors);
     checkFloatingShadowBtn(node, errors);
     checkAlign(node, errors);
+    checkFloatingAlign(node, errors);
     checkFont(node, errors);
     checkLabelLength(node, errors);
     checkLabelOpacity(node, errors);
-    // checkStrokes(node, errors);
-    // checkRadius(node, errors, borderRadiusArray);
-    // checkEffects(node, errors);
 
     return errors;
   }
@@ -383,19 +365,13 @@ figma.ui.onmessage = msg => {
   function lintTextRules(node) {
     let errors = [];
 
-    // checkType(node, errors);
     checkBtns(node, errors);
     checkFloatingShadowBtn(node, errors);
     checkAlign(node, errors);
+    checkFloatingAlign(node, errors);
     checkFont(node, errors);
     checkLabelLength(node, errors);
     checkLabelOpacity(node, errors);
-
-    // We could also comment out checkBtns and use a custom function instead
-    // Take a look at line 122 in lintingFunction.ts for an example.
-    // customCheckTextFills(node, errors);
-    // checkEffects(node, errors);
-    // checkStrokes(node, errors);
 
     return errors;
   }
@@ -406,13 +382,10 @@ figma.ui.onmessage = msg => {
     checkBtns(node, errors);
     checkFloatingShadowBtn(node, errors);
     checkAlign(node, errors);
+    checkFloatingAlign(node, errors);
     checkFont(node, errors);
     checkLabelLength(node, errors);
     checkLabelOpacity(node, errors);
-
-    // checkRadius(node, errors, borderRadiusArray);
-    // checkStrokes(node, errors);
-    // checkEffects(node, errors);
 
     return errors;
   }
@@ -425,12 +398,10 @@ figma.ui.onmessage = msg => {
       checkBtns(node, errors);
       checkFloatingShadowBtn(node, errors);
       checkAlign(node, errors);
+      checkFloatingAlign(node, errors);
       checkFont(node, errors);
       checkLabelLength(node, errors);
       checkLabelOpacity(node, errors);
-
-      // checkStrokes(node, errors);
-      // checkEffects(node, errors);
     }
 
     return errors;
@@ -442,6 +413,7 @@ figma.ui.onmessage = msg => {
     checkBtns(node, errors);
     checkFloatingShadowBtn(node, errors);
     checkAlign(node, errors);
+    checkFloatingAlign(node, errors);
     checkFont(node, errors);
     checkLabelLength(node, errors);
     checkLabelOpacity(node, errors);
